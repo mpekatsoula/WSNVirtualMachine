@@ -1,0 +1,21 @@
+--Init--
+	set	r7	0
+	set	r8	127 
+	tmr	1	4 
+	ret
+--Init--
+--Timer--
+	rdb	r1 
+	inc	r7 
+	min	r8	r1 
+	snd	1
+	set	r7	0 
+	set	r8	127 
+	tmr	1	4 
+	ret
+--Timer--
+--Msg--
+	add	r7	r9 
+	min	r8	r10 
+	ret
+--Msg--

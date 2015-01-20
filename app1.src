@@ -1,0 +1,10 @@
+--Init--
+	tmr	0	2
+	ret
+--Init--
+--Timer--
+	rdb	r7 
+	snd	0
+	tmr	0	2
+	ret
+--Timer--

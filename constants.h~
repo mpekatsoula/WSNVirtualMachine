@@ -1,0 +1,53 @@
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
+
+#define MAX_REGS 6
+#define MAX_APPS 3
+
+#define NULL_HANDLER 0
+#define INIT_HANDLER 1
+#define TIMER_HANDLER 2
+
+#define CACHE_TIMEOUT 1000
+
+#define SerialQueueSize 30
+#define SerialMsgSize 20
+
+#define INSTALL 11
+#define UNINSTALL 12
+
+enum { AM_NODETOPC = 6 };
+
+/* Application struct */
+typedef struct _app {
+
+  uint8_t init[255];
+  uint8_t timer[255];
+  uint8_t id; // application id. Usefull for unloading apps
+  uint8_t PC; // program counter
+  uint8_t handler;
+  uint8_t next_handler;
+  uint8_t waiting_sensor;
+  int8_t regs[MAX_REGS];
+  bool isActive;
+  
+} app;
+
+
+typedef struct test_serial_msg {
+  
+  nx_uint8_t type;
+  nx_uint8_t appid;
+  nx_uint8_t binary[32];
+    
+} test_serial_msg;
+
+typedef struct test_serial_msg_resp {
+  
+  nx_uint8_t instr;
+  nx_uint8_t pc;
+  nx_uint8_t appid;
+
+    
+} serial_response;
+#endif

@@ -1,0 +1,15 @@
+--Init--
+	tmr	0	3
+	ret
+--Init--
+--Timer--
+	rdb	r7 
+	snd	0
+	tmr	0	3
+	ret
+--Timer--
+--Msg--
+	cpy	r7	r9
+	snd	0
+	ret
+--Msg--
