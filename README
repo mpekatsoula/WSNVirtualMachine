@@ -1,0 +1,4 @@
+A virtual machine, developed in tinyOS and nesC. VM sup-
+ports dynamic application loading, code propagation, appli-
+cation level communication and result aggregation back to
+root node.
